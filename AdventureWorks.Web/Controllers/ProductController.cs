@@ -127,7 +127,7 @@ namespace AdventureWorks.Web.Controllers
         public ActionResult Details(int id)
         {
             try
-            {
+            { //aa
                 Product product = new ProductAccess(db,log).GetById(id);
 
                 return View(product);
