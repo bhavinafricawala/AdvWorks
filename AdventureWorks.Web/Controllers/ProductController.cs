@@ -6,18 +6,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AdventureWorks.Data.Interfaces;
+using AdventureWorks.Data.Other;
+using System.Data;
 
 namespace AdventureWorks.Web.Controllers
 {
     public class ProductController : Controller
     {
         // GET: Product
-        DbConnection db = new DbConnection();
+        IConnection db = new DbConnection();
+        ILogs log = new Logs();
+
         public ActionResult Index()
         {
             try
             {
-                IList<Product> products = new ProductAccess(db).GetAllProducts();
+
+                IList<Product> products = new ProductAccess(db, log).GetAll();
 
                 return View(products);
             }
@@ -31,11 +37,11 @@ namespace AdventureWorks.Web.Controllers
         {
             try
             {
-                Product product = new ProductAccess(db).GetProductById(id);
+                Product product = new ProductAccess(db,log).GetById(id);
 
                 return View(product);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }
@@ -48,12 +54,12 @@ namespace AdventureWorks.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    new ProductAccess(db).UpdateProduct(product);
+                    new ProductAccess(db,log).Update(product);
                     return RedirectToAction("Index");
                 }
                 return View(product);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }
@@ -73,7 +79,7 @@ namespace AdventureWorks.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    new ProductAccess(db).InsertProduct(product);
+                    new ProductAccess(db,log).Insert(product);
                     return RedirectToAction("Index");
                 }
                 return View(product);
@@ -88,7 +94,7 @@ namespace AdventureWorks.Web.Controllers
         {
             try
             {
-                Product product = new ProductAccess(db).GetProductById(id);
+                Product product = new ProductAccess(db,log).GetById(id);
                 return View(product);
             }
             catch (Exception ex)
@@ -102,17 +108,17 @@ namespace AdventureWorks.Web.Controllers
         {
             try
             {
-                Product product = new ProductAccess(db).GetProductById(id);
+                Product product = new ProductAccess(db,log).GetById(id);
 
                 if (ModelState.IsValid)
                 {
-                    new ProductAccess(db).DeleteProduct(product);
+                    new ProductAccess(db,log).Delete(product);
 
                     return RedirectToAction("Index");
                 }
                 return View(product);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }
@@ -122,11 +128,11 @@ namespace AdventureWorks.Web.Controllers
         {
             try
             {
-                Product product = new ProductAccess(db).GetProductById(id);
+                Product product = new ProductAccess(db,log).GetById(id);
 
                 return View(product);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return View(ex.Message);
             }

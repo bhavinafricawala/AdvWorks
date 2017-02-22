@@ -1,5 +1,7 @@
 ﻿using AdventureWorks.Business.Product;
 using AdventureWorks.Data;
+using AdventureWorks.Data.Interfaces;
+using AdventureWorks.Data.Other;
 using AdventureWorks.Data.ProductData;
 using AdventureWorks.Data.ProductData.Fake;
 using System;
@@ -21,13 +23,16 @@ namespace AdventureWorks.Application
             Console.WriteLine("Enter Product List Price");
             product.ListPrice = decimal.Parse(Console.ReadLine());
 
-            new FakeProductAccess(new DbConnection()).InsertProduct(product);
-            new ProductAccess(new DbConnection()).InsertProduct(product);
+            ILogs log = new Logs();
+            DbConnection db = new DbConnection();
+
+            new FakeProductAccess(db, log).Insert(product);
+            new ProductAccess(db,log).Insert(product);
 
             Console.WriteLine("");
             Console.WriteLine("");
 
-            IList<Product> products = new ProductAccess(new DbConnection()).GetAllProducts();
+            IList<Product> products = new ProductAccess(db, log).GetAll();
             
             foreach (Product p in products)
             {

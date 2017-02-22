@@ -5,35 +5,37 @@ using AdventureWorks.Business.Product;
 
 namespace AdventureWorks.Data.ProductData.Fake
 {
-    public class FakeProductAccess : IRepository
+    public class FakeProductAccess : IRepository<Product>
     {
         private readonly IDbConnection _db;
-        public FakeProductAccess(IConnection db)
+        private readonly ILogs _log;
+        public FakeProductAccess(IConnection db, ILogs log)
         {
             _db = db.GetConnection();
+            _log = log;
         }
 
-        public int DeleteProduct(Product product)
+        public int Delete(Product product)
         {
             return 1;
         }
 
-        public IList<Product> GetAllProducts()
+        public IList<Product> GetAll()
         {
             return new List<Product>();
         }
 
-        public Product GetProductById(int productId)
+        public Product GetById(int productId)
         {
             return new Product();
         }
 
-        public int InsertProduct(Product product)
+        public int Insert(Product product)
         {
             return 1;
         }
 
-        public int UpdateProduct(Product product)
+        public int Update(Product product)
         {
             return 1;
         }
