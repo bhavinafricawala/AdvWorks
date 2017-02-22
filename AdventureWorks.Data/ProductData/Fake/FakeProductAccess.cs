@@ -10,7 +10,7 @@ using AdventureWorks.Business.Product;
 
 namespace AdventureWorks.Data.ProductData.Fake
 {
-    public class FakeProductAccess : IProductAccess
+    public class FakeProductAccess : IRepository
     {
         private readonly IDbConnection _db;
         public FakeProductAccess(IConnection db)

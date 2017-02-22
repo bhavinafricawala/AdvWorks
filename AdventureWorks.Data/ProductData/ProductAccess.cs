@@ -11,48 +11,91 @@ using AdventureWorks.Data.Interfaces;
 
 namespace AdventureWorks.Data.ProductData
 {
-    public class ProductAccess : IProductAccess
+    public class ProductAccess : IRepository<Product>
     {
         private readonly IDbConnection _db;
-        public ProductAccess(IConnection db)
+        private readonly ILogs _log;
+        public ProductAccess(IConnection db, ILogs log)
         {
             _db = db.GetConnection();
+            _log = log;
         }
-        public IList<Product> GetAllProducts()
+        public IList<Product> GetAll()
         {
-            string query = "[dbo].[sp_Get_All_Products]";
+            try
+            {
+                string query = "[dbo].[sp_Get_All_Products]";
 
-            return _db.Query<Product>(query).ToList();
+                return _db.Query<Product>(query).ToList();
+            }
+            catch (Exception ex)
+            {
+                _log.Handle(ex);
+                return new List<Product>();
+            }
         }
 
-        public Product GetProductById(int productId)
+        public Product GetById(int productId)
         {
-            string query = "[dbo].[sp_Get_Product_By_ID] @ProductID";
+            try
+            {
 
-            return _db.Query<Product>(query, new { ProductID = productId }).SingleOrDefault();
+                string query = "[dbo].[sp_Get_Product_By_ID] @ProductID";
+
+                return _db.Query<Product>(query, new { ProductID = productId }).SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                _log.Handle(ex);
+                return new Product();
+            }
         }
 
-        public int InsertProduct(Product product)
+        public int Insert(Product product)
         {
-            string query = "[dbo].[sp_Insert_Product] @Name, @ProductNumber, @MakeFlag, @FinishedGoodsFlag,@Color," +
+            try
+            {
+                string query = "[dbo].[sp_Insert_Product] @Name, @ProductNumber, @MakeFlag, @FinishedGoodsFlag,@Color," +
                         "@SafetyStockLevel,@ReorderPoint,@StandardCost,@ListPrice,@Size";
 
-            return _db.Execute(query, product);
+                return _db.Execute(query, product);
+            }
+            catch (Exception ex)
+            {
+                _log.Handle(ex);
+                return -1;
+            }
         }
 
-        public int UpdateProduct(Product product)
+        public int Update(Product product)
         {
+            try
+            {
                 string query = "[dbo].[sp_Update_Product] @ProductID, @Name, @ProductNumber, @MakeFlag, @FinishedGoodsFlag,@Color," +
-                            "@SafetyStockLevel,@ReorderPoint,@StandardCost,@ListPrice,@Size";
+                        "@SafetyStockLevel,@ReorderPoint,@StandardCost,@ListPrice,@Size";
 
                 return _db.Execute(query, product);
+            }
+            catch (Exception ex)
+            {
+                _log.Handle(ex);
+                return -1;
+            }
         }
 
-        public int DeleteProduct(Product product)
+        public int Delete(Product product)
         {
+            try
+            {
                 string query = "[dbo].[sp_Delete_Product] @ProductID";
 
                 return _db.Execute(query, product);
+            }
+            catch (Exception ex)
+            {
+                _log.Handle(ex);
+                return -1;
+            }
         }
     }
 }
