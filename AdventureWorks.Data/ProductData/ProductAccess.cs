@@ -15,6 +15,7 @@ namespace AdventureWorks.Data.ProductData
     {
         private readonly IDbConnection _db;
         private readonly ILogs _log;
+
         public ProductAccess(IConnection db, ILogs log)
         {
             _db = db.GetConnection();
