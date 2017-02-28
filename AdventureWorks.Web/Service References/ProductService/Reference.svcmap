@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d76e3c6f-4952-4b0a-a8f7-b903d818f5c0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6990/ProductFacade.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductFacade.xsd" MetadataType="Schema" ID="b5261b9d-4480-4033-8ac5-55f232a4915a" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProductFacade.disco" MetadataType="Disco" ID="9f674e30-a4b2-4197-8faa-afedcb9513b6" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?disco" />
+    <MetadataFile FileName="ProductFacade1.xsd" MetadataType="Schema" ID="e08a8564-837e-4a93-9d50-155d75451157" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProductFacade.wsdl" MetadataType="Wsdl" ID="66012cfe-4a05-4814-b5e3-6283319bba41" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?wsdl" />
+    <MetadataFile FileName="ProductFacade2.xsd" MetadataType="Schema" ID="45cb6e97-b54c-45eb-b268-9e96e9e4764c" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductFacade3.xsd" MetadataType="Schema" ID="0717b628-d005-4202-9f15-59f030f7b4af" SourceId="1" SourceUrl="http://localhost:6990/ProductFacade.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
