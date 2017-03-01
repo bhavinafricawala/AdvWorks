@@ -1,5 +1,7 @@
 ﻿using AdventureWorks.Business.Product;
+using AdventureWorks.Data;
 using AdventureWorks.Data.Interfaces;
+using AdventureWorks.Data.Other;
 using AdventureWorks.Data.ProductData;
 using SimpleInjector;
 using System;
@@ -16,8 +18,10 @@ namespace AdventureWorks.Factory
 
         static ProductFactory()
         {
-            container.Register<IRepository<Product>, ProductAccess>(Lifestyle.Singleton);
-            
+            container.Register<IConnection, DbConnection>(Lifestyle.Singleton);
+            container.Register<ILogs, Logs>(Lifestyle.Singleton);
+            //container.Register<IRepository<Product>>((factory) => new ProductAccess(container.GetInstance<IConnection>(),
+            //    container.GetInstance<ILogs>()));   
         }
 
         public static IRepository<Product> GetProductAccess()
