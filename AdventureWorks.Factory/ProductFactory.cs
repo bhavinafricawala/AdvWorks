@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AdventureWorks.Factory
 {
-    public static class ProductFactory
+    public class ProductFactory
     {
         private static Container container = new Container();
 
@@ -20,11 +20,11 @@ namespace AdventureWorks.Factory
         {
             container.Register<IConnection, DbConnection>(Lifestyle.Singleton);
             container.Register<ILogs, Logs>(Lifestyle.Singleton);
-            //container.Register<IRepository<Product>>((factory) => new ProductAccess(container.GetInstance<IConnection>(),
-            //    container.GetInstance<ILogs>()));   
+            container.Register<IRepository<Product>>(() => new ProductAccess(container.GetInstance<DbConnection>(),
+                container.GetInstance<Logs>()));   
         }
 
-        public static IRepository<Product> GetProductAccess()
+        public IRepository<Product> GetProductAccess()
         {
             IRepository<Product> product=(ProductAccess)container.GetInstance(typeof(IRepository<Product>));
 

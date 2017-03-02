@@ -125,6 +125,10 @@
       <Project>{11dba8c1-c7da-49d1-9c5e-e9592112e315}</Project>
       <Name>AdventureWorks.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AdventureWorks.Factory\AdventureWorks.Factory.csproj">
+      <Project>{4670ae6a-b396-4299-af14-1c6e398033a0}</Project>
+      <Name>AdventureWorks.Factory</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
