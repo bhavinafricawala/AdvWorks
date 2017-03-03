@@ -21,7 +21,7 @@ namespace AdventureWorks.Factory
             container.Register<IConnection, DbConnection>(Lifestyle.Singleton);
             container.Register<ILogs, Logs>(Lifestyle.Singleton);
             container.Register<IRepository<Product>>(() => new ProductAccess(container.GetInstance<DbConnection>(),
-                container.GetInstance<Logs>()));   
+                container.GetInstance<Logs>()));
         }
 
         public IRepository<Product> GetProductAccess()
