@@ -1,4 +1,4 @@
-﻿namespace AdventureWorks.Business.Product
+﻿namespace AdventureWorks.Entities.Product
 {
     public class Product
     {

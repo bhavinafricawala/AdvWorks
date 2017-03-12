@@ -1,4 +1,4 @@
-﻿using AdventureWorks.Business.Product;
+﻿using AdventureWorks.Entities.Product;
 using AdventureWorks.Data;
 using AdventureWorks.Data.Interfaces;
 using AdventureWorks.Data.Other;
@@ -24,9 +24,9 @@ namespace AdventureWorks.Factory
                 container.GetInstance<Logs>()));
         }
 
-        public IRepository<Product> GetProductAccess()
+        public IRepository<Product> InvokeProductAccess()
         {
-            IRepository<Product> product=(ProductAccess)container.GetInstance(typeof(IRepository<Product>));
+            var product = (ProductAccess)container.GetInstance(typeof(IRepository<Product>));
 
             return product;
         }

@@ -1,4 +1,4 @@
-﻿using AdventureWorks.Business.Product;
+﻿using AdventureWorks.Entities.Product;
 using AdventureWorks.Data;
 using AdventureWorks.Data.Interfaces;
 using AdventureWorks.Data.Other;

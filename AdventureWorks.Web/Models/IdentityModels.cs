@@ -30,6 +30,6 @@ namespace AdventureWorks.Web.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<AdventureWorks.Business.Product.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<AdventureWorks.Entities.Product.Product> Products { get; set; }
     }
 }

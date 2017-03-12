@@ -91,34 +91,34 @@ namespace AdventureWorks.Web.ProductService {
         System.Threading.Tasks.Task<AdventureWorks.Web.ProductService.CompositeType> GetDataUsingDataContractAsync(AdventureWorks.Web.ProductService.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllProducts", ReplyAction="http://tempuri.org/IService1/GetAllProductsResponse")]
-        AdventureWorks.Business.Product.Product[] GetAllProducts();
+        AdventureWorks.Entities.Product.Product[] GetAllProducts();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllProducts", ReplyAction="http://tempuri.org/IService1/GetAllProductsResponse")]
-        System.Threading.Tasks.Task<AdventureWorks.Business.Product.Product[]> GetAllProductsAsync();
+        System.Threading.Tasks.Task<AdventureWorks.Entities.Product.Product[]> GetAllProductsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductById", ReplyAction="http://tempuri.org/IService1/GetProductByIdResponse")]
-        AdventureWorks.Business.Product.Product GetProductById(int id);
+        AdventureWorks.Entities.Product.Product GetProductById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetProductById", ReplyAction="http://tempuri.org/IService1/GetProductByIdResponse")]
-        System.Threading.Tasks.Task<AdventureWorks.Business.Product.Product> GetProductByIdAsync(int id);
+        System.Threading.Tasks.Task<AdventureWorks.Entities.Product.Product> GetProductByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertProduct", ReplyAction="http://tempuri.org/IService1/InsertProductResponse")]
-        int InsertProduct(AdventureWorks.Business.Product.Product product);
+        int InsertProduct(AdventureWorks.Entities.Product.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertProduct", ReplyAction="http://tempuri.org/IService1/InsertProductResponse")]
-        System.Threading.Tasks.Task<int> InsertProductAsync(AdventureWorks.Business.Product.Product product);
+        System.Threading.Tasks.Task<int> InsertProductAsync(AdventureWorks.Entities.Product.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
-        int UpdateProduct(AdventureWorks.Business.Product.Product product);
+        int UpdateProduct(AdventureWorks.Entities.Product.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProduct", ReplyAction="http://tempuri.org/IService1/UpdateProductResponse")]
-        System.Threading.Tasks.Task<int> UpdateProductAsync(AdventureWorks.Business.Product.Product product);
+        System.Threading.Tasks.Task<int> UpdateProductAsync(AdventureWorks.Entities.Product.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
-        int DeleteProduct(AdventureWorks.Business.Product.Product product);
+        int DeleteProduct(AdventureWorks.Entities.Product.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProduct", ReplyAction="http://tempuri.org/IService1/DeleteProductResponse")]
-        System.Threading.Tasks.Task<int> DeleteProductAsync(AdventureWorks.Business.Product.Product product);
+        System.Threading.Tasks.Task<int> DeleteProductAsync(AdventureWorks.Entities.Product.Product product);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -164,43 +164,43 @@ namespace AdventureWorks.Web.ProductService {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
-        public AdventureWorks.Business.Product.Product[] GetAllProducts() {
+        public AdventureWorks.Entities.Product.Product[] GetAllProducts() {
             return base.Channel.GetAllProducts();
         }
         
-        public System.Threading.Tasks.Task<AdventureWorks.Business.Product.Product[]> GetAllProductsAsync() {
+        public System.Threading.Tasks.Task<AdventureWorks.Entities.Product.Product[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
         }
         
-        public AdventureWorks.Business.Product.Product GetProductById(int id) {
+        public AdventureWorks.Entities.Product.Product GetProductById(int id) {
             return base.Channel.GetProductById(id);
         }
         
-        public System.Threading.Tasks.Task<AdventureWorks.Business.Product.Product> GetProductByIdAsync(int id) {
+        public System.Threading.Tasks.Task<AdventureWorks.Entities.Product.Product> GetProductByIdAsync(int id) {
             return base.Channel.GetProductByIdAsync(id);
         }
         
-        public int InsertProduct(AdventureWorks.Business.Product.Product product) {
+        public int InsertProduct(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.InsertProduct(product);
         }
         
-        public System.Threading.Tasks.Task<int> InsertProductAsync(AdventureWorks.Business.Product.Product product) {
+        public System.Threading.Tasks.Task<int> InsertProductAsync(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.InsertProductAsync(product);
         }
         
-        public int UpdateProduct(AdventureWorks.Business.Product.Product product) {
+        public int UpdateProduct(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.UpdateProduct(product);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateProductAsync(AdventureWorks.Business.Product.Product product) {
+        public System.Threading.Tasks.Task<int> UpdateProductAsync(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.UpdateProductAsync(product);
         }
         
-        public int DeleteProduct(AdventureWorks.Business.Product.Product product) {
+        public int DeleteProduct(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.DeleteProduct(product);
         }
         
-        public System.Threading.Tasks.Task<int> DeleteProductAsync(AdventureWorks.Business.Product.Product product) {
+        public System.Threading.Tasks.Task<int> DeleteProductAsync(AdventureWorks.Entities.Product.Product product) {
             return base.Channel.DeleteProductAsync(product);
         }
     }

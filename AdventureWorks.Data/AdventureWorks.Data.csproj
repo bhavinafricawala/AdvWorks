@@ -63,9 +63,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdventureWorks.Business\AdventureWorks.Business.csproj">
+    <ProjectReference Include="..\AdventureWorks.Business\AdventureWorks.Entities.csproj">
       <Project>{3edfb190-c69d-4fcc-a3b7-9e43060f6e47}</Project>
-      <Name>AdventureWorks.Business</Name>
+      <Name>AdventureWorks.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

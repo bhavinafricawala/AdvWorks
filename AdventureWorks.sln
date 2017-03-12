@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{25D37E67-FA55-4BC7-B730-270F48017207}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{25D37E67-FA55-4BC7-B730-270F48017207}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{DAD422AA-26FE-42FE-8569-3313A71038AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{7837F0E5-245E-4C6E-ADD6-880EFBAF8813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Business", "AdventureWorks.Business\AdventureWorks.Business.csproj", "{3EDFB190-C69D-4FCC-A3B7-9E43060F6E47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Entities", "AdventureWorks.Business\AdventureWorks.Entities.csproj", "{3EDFB190-C69D-4FCC-A3B7-9E43060F6E47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureWorks.Data", "AdventureWorks.Data\AdventureWorks.Data.csproj", "{11DBA8C1-C7DA-49D1-9C5E-E9592112E315}"
 EndProject

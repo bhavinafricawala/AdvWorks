@@ -1,7 +1,7 @@
 ﻿using AdventureWorks.Data.Interfaces;
 using System.Collections.Generic;
 using System.Data;
-using AdventureWorks.Business.Product;
+using AdventureWorks.Entities.Product;
 
 namespace AdventureWorks.Data.ProductData.Fake
 {

@@ -1,4 +1,4 @@
-﻿using AdventureWorks.Business.Product;
+﻿using AdventureWorks.Entities.Product;
 using System;
 using System.Collections.Generic;
 using System.Data;
